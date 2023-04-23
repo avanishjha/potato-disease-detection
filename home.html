@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potato Disease Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Potato Leaf Disease Prediction</h1>
+        <form enctype="multipart/form-data" id="upload-form">
+            <input type="file" id="file-input" accept="image/*" required>
+            <label for="file-input" id="file-label">Choose an image</label>
+            <button type="submit" id="predict-button">Predict</button>
+        </form>
+        <div id="result" class="hidden">
+            <img id="uploaded-image" src="#" alt="Uploaded image">
+            <p id="result-text"></p>
+            <p id="result-confidence"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

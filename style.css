@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #b4aee8, #dcd4f7);
+}
+.hidden {
+	display: none;
+  }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+#file-label {
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#file-input {
+    display: none;
+}
+
+#predict-button {
+    padding: 1rem 2rem;
+    background-color: #7535d0;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.2s ease;
+}
+
+#predict-button:hover {
+    background-color: #8a55e2;
+}
+
+#result {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+#result-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#result-confidence {
+    font-size: 1.2rem;
+}
+#uploaded-image {
+	width: 300px;
+	height: 300px;
+	object-fit: contain; /* or object-fit: contain; depending on how you want to display the image */
+  }
