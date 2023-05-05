@@ -11,7 +11,7 @@ form.addEventListener('submit', async (event) => {
     const formData = new FormData();
     formData.append('file', fileInput.files[0]);
 
-    const response = await fetch('https://asia-south1-potato-disease-openlab.cloudfunctions.net/predicthis', {
+    const response = await fetch('http://localhost:8000/predict', {
         method: 'POST',
         body: formData
     });
