@@ -10,7 +10,7 @@ output_index = None
 
 class_names = ["Early Blight", "Late Blight", "Healthy"]
 
-BUCKET_NAME = "myml-models" # Here you need to put the name of your GCP bucket
+BUCKET_NAME = "myml-models"  # Here you need to put the name of your GCP bucket
 
 
 def download_blob(bucket_name, source_blob_name, destination_file_name):
@@ -37,15 +37,15 @@ def predict(request):
     image = request.files["file"]
 
     image = np.array(
-        Image.open(image).convert("RGB").resize((256, 256)) # image resizing
+        Image.open(image).convert("RGB").resize((256, 256))  # image resizing
     )
 
-    image = image/255 # normalize the image in 0 to 1 range
+    image = image / 255  # normalize the image in 0 to 1 range
 
     img_array = tf.expand_dims(image, 0)
     predictions = model.predict(img_array)
 
-    print("Predictions:",predictions)
+    print("Predictions:", predictions)
 
     predicted_class = class_names[np.argmax(predictions[0])]
     confidence = round(100 * (np.max(predictions[0])), 2)
