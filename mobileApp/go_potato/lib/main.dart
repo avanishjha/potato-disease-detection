@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
       });
 
       const String apiUrl =
-          'https://asia-south1-potato-disease-openlab.cloudfunctions.net/predicthis'; // Replace with your API URL
+          'https://asia-south1-potato-disease-openlab.cloudfunctions.net/predict'; // Replace with your API URL
       final Uri apiUri = Uri.parse(apiUrl);
 
       final http.MultipartRequest request =
