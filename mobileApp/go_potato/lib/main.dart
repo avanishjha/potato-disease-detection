@@ -39,7 +39,6 @@ class _HomePageState extends State<HomePage> {
   Future<void> _pickImage() async {
     final ImagePicker picker = ImagePicker();
     final PickedFile? pickedFile =
-        // ignore: deprecated_member_use
         await picker.getImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
@@ -48,7 +47,7 @@ class _HomePageState extends State<HomePage> {
       });
 
       const String apiUrl =
-          'https://asia-south1-potato-disease-openlab.cloudfunctions.net/predict'; // Replace with your API URL
+          'https://asia-south1-potato-disease-openlab.cloudfunctions.net/predictlite'; // Replace with your API URL
       final Uri apiUri = Uri.parse(apiUrl);
 
       final http.MultipartRequest request =
@@ -88,6 +87,12 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   Image.file(_image!),
+                  if (_predictedClass == null && _confidence == null)
+                    const Text(
+                      '..Processing',
+                      style: TextStyle(fontSize: 20),
+                      textAlign: TextAlign.center,
+                    ),
                   if (_predictedClass != null && _confidence != null)
                     Text(
                       'Prediction: $_predictedClass\nConfidence: $_confidence%',
